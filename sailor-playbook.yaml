@@ -39,7 +39,7 @@
     - name: copy war
       copy:
         src: target/sailor.war
-        dest: /u01/middleware/apache-tomcat-9.0.64/webapps
+        dest: /u01/middleware/apache-tomcat-9.0.73/webapps
       notify:
         - tomcatrestart  
   handlers:    
