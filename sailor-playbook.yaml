@@ -1,7 +1,7 @@
 - name: sailor application playbook
   hosts: all
   vars:
-    TOMCAT_HOME: "/u01/middleware/apache-tomcat-9.0.64"
+    TOMCAT_HOME: "/u01/middleware/apache-tomcat-9.0.73"
   tasks:
     - name: install jdk11
       apt:
@@ -21,11 +21,11 @@
       become_method: sudo  
     - name: install tomcat
       get_url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
+        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz
         dest: /u01/middleware
     - name: unzip tomcat
       unarchive:
-        src: /u01/middleware/apache-tomcat-9.0.64.tar.gz       
+        src: /u01/middleware/apache-tomcat-9.0.73.tar.gz      
         dest: /u01/middleware
         remote_src: true    
     - name: install as service
