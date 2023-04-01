@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'maven'
-        jdk 'jdk11'
+        jdk 'jdk'
         //ansible 'ansible'
         terraform 'terraform'
     }
@@ -14,7 +14,7 @@ pipeline {
     stages{
         stage('checkout') {
             steps {
-                git(url: 'https://github.com/techsriman/sailoraws.git', credentialsId: 'githubtechsriman')
+                git branch: 'main', credentialsId: 'gitcredentials', url: 'https://github.com/maheshpathu/sailre.git'
             }            
         }
         stage('build') {
