@@ -35,7 +35,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                ansiblePlaybook(playbook: 'sailor-playbook.yaml', credentialsId: 'aws_instance_ssh_key', inventory: 'hosts')
+                ansiblePlaybook credentialsId: 'ansible', installation: 'ansible', inventory: 'hosts', playbook: 'sailor-playbook.yaml'
             }
         }
     }
